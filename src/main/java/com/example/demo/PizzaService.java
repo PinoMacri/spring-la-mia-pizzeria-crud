@@ -16,4 +16,16 @@ public class PizzaService {
 	public Pizza save(Pizza pizza) {
 		return pizzaRepository.save(pizza);
 	}
+
+	public void createAndSavePizza() {
+		Pizza australiana = new Pizza("Romana", "Pomodoro, Mozzarella Guanciale e Pecorino", "www.ciao.it", 30.00f);
+		pizzaRepository.save(australiana);
+
+		Pizza thailandese = new Pizza("Romana", "Pomodoro, Mozzarella Guanciale e Pecorino", "www.ciao.it", 30.00f);
+		pizzaRepository.save(thailandese);
+	}
+	
+	public List<Pizza> findByNome(String nome) {
+		return pizzaRepository.findByNomeContaining(nome);
+	}
 }

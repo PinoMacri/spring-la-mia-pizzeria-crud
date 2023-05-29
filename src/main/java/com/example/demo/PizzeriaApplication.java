@@ -17,6 +17,8 @@ public class PizzeriaApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        pizzaService.createAndSavePizza();
+    	
         Pizza margherita = new Pizza("Margherita", "Pomodoro e Mozzarella","www.ciao.it",30.00f);
         pizzaService.save(margherita);
         
@@ -31,5 +33,7 @@ public class PizzeriaApplication implements CommandLineRunner {
         
         Pizza romana = new Pizza("Romana", "Pomodoro, Mozzarella Guanciale e Pecorino","www.ciao.it",30.00f);
         pizzaService.save(romana);
+
+     
     }
 }
