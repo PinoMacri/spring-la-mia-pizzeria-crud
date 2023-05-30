@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class PizzaController {
 	@Autowired
 	private PizzaService pizzaService;
-
+	
 	@GetMapping("/pizze")
 	public String index(Model model) {
 		Optional<List<Pizza>> optionalPizze = Optional.of(pizzaService.findAll());
@@ -28,6 +28,11 @@ public class PizzaController {
 		}
 
 		return "index";
+	}
+	
+	@GetMapping("/")
+	public String home (Model model) {
+		return "home";
 	}
 
 	@GetMapping("/pizze/{id}")
