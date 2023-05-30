@@ -4,16 +4,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Pizza {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
+	
+	@NotBlank(message="Il nome non può essere vuoto")
 	private String nome;
+	@Size(min=2,max=100, message="La descrizione deve contenere minimo 2 e massimo 100 caratteri")
 	private String descrizione;
+	@NotBlank(message="La foto è obbligatoria")
 	private String foto;
+	@Min(value=1, message="Inserisci un prezzo valido")
 	private Float prezzo;
 
 	public Pizza() {

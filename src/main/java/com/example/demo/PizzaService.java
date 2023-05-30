@@ -20,10 +20,10 @@ public class PizzaService {
 	}
 
 	public void createAndSavePizza() {
-		Pizza australiana = new Pizza("Romana", "Pomodoro, Mozzarella Guanciale e Pecorino", "www.ciao.it", 30.00f);
+		Pizza australiana = new Pizza("Australiana", "Pomodoro, Mozzarella Guanciale e Pecorino", "www.ciao.it", 30.00f);
 		pizzaRepository.save(australiana);
 
-		Pizza thailandese = new Pizza("Romana", "Pomodoro, Mozzarella Guanciale e Pecorino", "www.ciao.it", 30.00f);
+		Pizza thailandese = new Pizza("Thailandese", "Pomodoro, Mozzarella Guanciale e Pecorino", "www.ciao.it", 30.00f);
 		pizzaRepository.save(thailandese);
 	}
 
