@@ -21,6 +21,8 @@
 <ul th:if="${not #lists.isEmpty(pizze)}">
     <li th:each="pizza : ${pizze}" th:object="${pizza}">
        <a th:href="@{/pizze/{id}(id=${pizza.id})}" th:text="${pizza.nome}"></a>
+       <a th:href="@{/pizze/delete/{id} (id=${pizza.id})}">Cancella</a>
+       <a th:href="@{/pizze/edit/{id} (id=${pizza.id})}">Modifica</a>
     </li>
 </ul>
 <p th:unless="${not #lists.isEmpty(pizze)}" th:text="${message}"></p>

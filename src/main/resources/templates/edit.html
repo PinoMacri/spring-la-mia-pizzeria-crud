@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body  th:object="${pizza}">
+<h1>Modifica Pizza</h1>
+<form method="POST" th:action="@{/pizze/update/{id}(id=${pizza.id})}">
+<label>nome</label>
+<input type="text" name="nome">
+<br>
+
+<label>descrizione</label>
+<input type="text" name="descrizione">
+<br>
+
+<label>foto</label>
+<input type="text" name="foto">
+<br>
+
+<label>prezzo</label>
+<input type="number" name="prezzo">
+<br>
+
+<input type="submit" value="MODIFICA">
+</form>
+</body>
+</html>

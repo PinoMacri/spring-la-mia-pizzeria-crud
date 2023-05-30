@@ -1,6 +1,8 @@
 package com.example.demo;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,8 +26,16 @@ public class PizzaService {
 		Pizza thailandese = new Pizza("Romana", "Pomodoro, Mozzarella Guanciale e Pecorino", "www.ciao.it", 30.00f);
 		pizzaRepository.save(thailandese);
 	}
-	
+
 	public List<Pizza> findByNome(String nome) {
 		return pizzaRepository.findByNomeContaining(nome);
+	}
+
+	public void delete(Pizza pizza) {
+		pizzaRepository.delete(pizza);
+	}
+
+	public Optional<Pizza> findById(int id) {
+		return pizzaRepository.findById(id);
 	}
 }
